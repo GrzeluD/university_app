@@ -1,1 +1,22 @@
-<h1>Courses Index</h1>
+<div class="row">
+  <div class="col s12">
+    <h2 class="center-align">Course Listing</h2>
+  </div>
+</div>
+
+<div class="row">
+  <% Course.all.each do |course| %>
+    <div class="col s6 m6">
+      <div class="card indigo lighten-5">
+        <div class="card-content black-text">
+          <span class="card-title"><%= course.short_name %>: <%= course.name %></span>
+          <p> <%= course.description %> </p>
+        </div>
+        <div class="card-action">
+          <a class="indigo btn-small" href="#">Enroll</a>
+          <a class="indigo btn-small" href="#">Info</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
