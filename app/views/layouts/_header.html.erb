@@ -27,4 +27,17 @@
     <li><a href="badges.html">Enrollments</a></li>
     <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>
   </ul>
+  <% flash.each do |key, message| %>
+    <div class="container">
+      <div class="row sign-form">
+        <div class="col s12 m12 l12">
+          <div class="card-panel green lighten-2 white-text" id="fade-out-target">
+            <span>
+              <%= message %>
+            </span>
+          </div>
+        </div>  
+      </div>
+    </div>
+  <% end %>
 </header>
