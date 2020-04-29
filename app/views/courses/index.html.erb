@@ -13,7 +13,9 @@
           <p> <%= course.description %> </p>
         </div>
         <div class="card-action">
-          <a class="indigo btn-small" href="#">Enroll</a>
+          <% if logged_in? && !(current_user.courses.include?(course)) %>
+            <%= link_to 'Enroll', course_enroll_path(course_id: course.id), method: :post, class: "indigo btn-small" %>
+          <% end %>
           <a class="indigo btn-small" href="#">Info</a>
         </div>
       </div>
