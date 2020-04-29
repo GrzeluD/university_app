@@ -11,9 +11,11 @@
         <span class="card-title">Name: <%= @student.name %></span>
         <p>Email: <%= @student.email %></p>
       </div>
-      <div class="card-action">
-        <%= link_to '<i class="material-icons right">create</i>Edit profile'.html_safe, edit_student_path(@student), class: "indigo btn-small" %>
-      </div>
+      <% if current_user == @student %>
+        <div class="card-action">
+          <%= link_to '<i class="material-icons right">create</i>Edit profile'.html_safe, edit_student_path(@student), class: "indigo btn-small" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
